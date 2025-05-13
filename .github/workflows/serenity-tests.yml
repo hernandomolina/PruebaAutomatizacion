@@ -34,8 +34,7 @@ jobs:
         run: mvn serenity:aggregate
 
       - name: Upload Serenity report
-        uses: actions/upload-artifact@3e65b9f9503e22f8b1b93c60b6fc21a225da2cf2
-
+        uses: actions/upload-artifact@v3
         with:
           name: serenity-report
           path: target/site/serenity
