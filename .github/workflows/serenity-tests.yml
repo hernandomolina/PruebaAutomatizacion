@@ -27,7 +27,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2-
 
       - name: Run Serenity tests
-        run: mvn clean verify
+        run: mvn clean verify -Dwebdriver.headless.mode=true
 
       - name: Upload Serenity report
         uses: actions/upload-artifact@v3
