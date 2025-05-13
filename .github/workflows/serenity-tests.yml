@@ -30,9 +30,11 @@ jobs:
       - name: Build with Maven
         run: mvn clean verify
 
-
       - name: Generate Serenity Report
         run: mvn serenity:aggregate
 
-      - name: Show report path
-        run: echo "✅ Revisa el reporte en target/site/serenity/index.html"
+      - name: Upload Serenity report
+        uses: actions/upload-artifact@v3
+        with:
+          name: serenity-report
+          path: target/site/serenity
