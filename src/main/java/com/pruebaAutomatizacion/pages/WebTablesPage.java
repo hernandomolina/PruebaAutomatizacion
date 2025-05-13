@@ -1,12 +1,8 @@
-package com.pruebatecnicaqa.pages;
+package com.pruebaAutomatizacion.pages;
 
-import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.annotations.findby.FindBy;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebTablesPage extends PageObject {
 

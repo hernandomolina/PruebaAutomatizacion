@@ -33,8 +33,5 @@ jobs:
       - name: Generate Serenity Report
         run: mvn serenity:aggregate
 
-      - name: Upload Serenity report
-        uses: actions/upload-artifact@v3
-        with:
-          name: serenity-report
-          path: target/site/serenity
+      - name: Show report path
+        run: echo "✅ Revisa el reporte en target/site/serenity/index.html"

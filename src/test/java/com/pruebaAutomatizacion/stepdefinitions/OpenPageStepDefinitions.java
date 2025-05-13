@@ -1,6 +1,6 @@
-package com.pruebatecnicaqa.stepdefinitions;
+package com.pruebaAutomatizacion.stepdefinitions;
 
-import com.pruebatecnicaqa.pages.WebTablesPage;
+import com.pruebaAutomatizacion.pages.WebTablesPage;
 import io.cucumber.java.en.Given;
 
 public class OpenPageStepDefinitions {
