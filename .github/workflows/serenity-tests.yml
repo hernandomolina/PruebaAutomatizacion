@@ -1,41 +1,37 @@
-name: Run Serenity Tests
+name: Serenity BDD Tests
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ '*' ]  # Se ejecuta en cualquier rama al hacer push
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: 'maven'
 
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
           path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-maven-
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2-
 
-      - name: Build with Maven
+      - name: Run Serenity tests
         run: mvn clean verify
 
-      - name: Generate Serenity Report
-        run: mvn serenity:aggregate
-
       - name: Upload Serenity report
-        uses: actions/upload-artifact@3e65b9f9503e22f8b1b93c60b6fc21a225da2cf2
-
+        uses: actions/upload-artifact@v3
+        if: always()  # Sube el reporte aunque falle el test
         with:
           name: serenity-report
           path: target/site/serenity
