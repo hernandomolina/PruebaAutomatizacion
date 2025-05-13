@@ -29,12 +29,6 @@ public class WebTablesPage extends PageObject {
     @FindBy(id = "age")
     WebElement inputAge;
 
-    @FindBy(id = "salary")
-    WebElement inputSalary;
-
-    @FindBy(id = "department")
-    WebElement inputDepartment;
-
     @FindBy(id = "submit")
     WebElement submitButton;
 
