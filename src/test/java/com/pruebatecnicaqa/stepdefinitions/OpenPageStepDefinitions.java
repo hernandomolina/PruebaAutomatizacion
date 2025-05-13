@@ -14,7 +14,7 @@ public class OpenPageStepDefinitions {
     @Before
     @Given("que el usuario abre la página de web tables")
     public void verificarPaginaAbierta() {
-        // Verificar que algún elemento clave de la página está visible
+        // Verificar que algún elemento clave de la página está visiblee
         webTablesPage.openWebTablesPage();
     }
 }
