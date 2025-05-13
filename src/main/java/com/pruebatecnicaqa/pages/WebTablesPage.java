@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WebTablesPage extends PageObject {
 
-    @FindBy(xpath= "//*[text()='Add']")
-    public WebElement addButton;
 
     @FindBy(xpath= "(//*[@class='rt-td'])[1]")
     public WebElement firstRowTable;
@@ -53,7 +51,6 @@ public class WebTablesPage extends PageObject {
     public void openWebTablesPage() {
         openUrl("https://demoqa.com/webtables");
     }
-
 
 
     public void clickDeleteButton() {
